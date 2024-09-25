@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoMapz - A Geolocation Service</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background"></div>
+
+    <div class="container">
+        <h1>GeoMapz - A Geolocation Service</h1>
+        <form id="geolocationForm">
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="feature" value="geocode" checked>
+                    Geocode Address
+                </label>
+                <label>
+                    <input type="radio" name="feature" value="reverse-geocode">
+                    Reverse Geocode
+                </label>
+                <label>
+                    <input type="radio" name="feature" value="geolocation">
+                    Geolocation by IP
+                </label>
+            </div>
+            <div id="inputContainer">
+                <input type="text" id="inputField" placeholder="Enter your input here" required>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+        <div id="resultContainer">
+            <h2>RESULT</h2>
+            <pre id="result"></pre>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
