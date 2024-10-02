@@ -75,6 +75,4 @@ app.get('/', (req, res) => {
 
 app.listen(3000, () => {
   console.log('Server running on port 3000');
-  console.log(`LocationIQ API Key: ${process.env.LOCATIONIQ_API_KEY}`);
-  console.log(`IPInfo API Key: ${process.env.IPINFO_API_KEY}`);
 });
