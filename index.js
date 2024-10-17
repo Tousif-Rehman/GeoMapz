@@ -4,14 +4,10 @@ const path = require('path');
 const app = express();
 require('dotenv').config();
 
-
 app.use(express.static(path.join(__dirname, 'public')));
-
-
 app.use(express.json());
 
-
-app.get('/geocode', async (req, res) => {
+app.get('/api/geocode', async (req, res) => {  // Updated path to '/api/geocode'
   const { address } = req.query;
   if (!address) return res.status(400).json({ error: 'Address is required' });
 
@@ -30,8 +26,7 @@ app.get('/geocode', async (req, res) => {
   }
 });
 
-
-app.get('/reverse-geocode', async (req, res) => {
+app.get('/api/reverse-geocode', async (req, res) => {  // Updated path to '/api/reverse-geocode'
   const { lat, lng } = req.query;
   if (!lat || !lng) return res.status(400).json({ error: 'Latitude and longitude are required' });
 
@@ -49,8 +44,7 @@ app.get('/reverse-geocode', async (req, res) => {
   }
 });
 
-
-app.get('/geolocation', async (req, res) => {
+app.get('/api/geolocation', async (req, res) => {  // Updated path to '/api/geolocation'
   const { ip } = req.query;
   if (!ip) return res.status(400).json({ error: 'IP address is required' });
 
@@ -67,12 +61,10 @@ app.get('/geolocation', async (req, res) => {
   }
 });
 
-
+// Serve the main HTML file
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-
-app.listen(3000, () => {
-  console.log('Server running on port 3000');
-});
+// Export the app for Vercel
+module.exports = app; 
