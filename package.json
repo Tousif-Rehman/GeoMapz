@@ -1,5 +1,5 @@
 {
-  "name": "geolocation-service",
+  "name": "geomapz",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -8,5 +8,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  }
 }
